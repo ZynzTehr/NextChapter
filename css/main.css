@@ -23,7 +23,7 @@ html {
 
 /* ==================== TYPOGRAPHY & BASIC ELEMENTS ==================== */
 
-.wrapper {
+main {
     background-color: var(--bg-color);
     height:100vh;
     width: max(40%, 600px);

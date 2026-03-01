@@ -1,0 +1,444 @@
+/* ======================= GLOBALS & LAYOUT ======================= */
+
+body {
+    background-color: var(--bg-color);
+    overflow-y: scroll;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+}
+
+main {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+span {
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* ======================= HEADER, TITLES & BANNERS ======================= */
+
+header h1 {
+    text-transform: uppercase;
+    padding: 2rem 0;
+}
+
+.title {
+    text-align: left;
+    margin: 5% 0 0 5%;
+    animation: pop-in 2s ease;
+}
+
+.banner {
+    background-color: var(--text-color);
+    color: beige;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+/* ======================= TOP SECTION ======================= */
+
+.top-section, .banner {
+    animation: pop-in 1.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border: 1px solid beige;
+    box-shadow: 0 0 10px beige;
+    border-radius: 20px;
+}
+
+.hero-content {
+    color: beige;
+    animation: pop-in 1.6s ease;
+}
+
+.hero-content h3 {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.hero-content p {
+    text-align: left;
+    margin-left: 2rem;
+    width: 60%;
+}
+
+
+.side-text {
+    writing-mode: vertical-rl;
+    font-size: 4rem;
+    font-variant: small-caps;
+    margin-right: 1.4rem;
+    animation: pop-in 1.2s ease;
+}
+
+/* ======================= GALLERY ======================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    gap: 1.5rem;
+    width: 90%;
+}
+
+.gallery video {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.contributors video {
+    border-radius: 20px;
+}
+
+section.banner {
+    border-radius: 20px;
+}
+
+/* ======================= FOOTER ======================= */
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: beige;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+}
+
+/* ======================= ANIMATIONS ======================= */
+
+@keyframes pop-in {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate {
+    transform: scale(0.9) translateX(-100px);
+    opacity: 0;
+    transition: all 800ms ease;
+}
+
+.animate.active {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+}
+
+/* ==================== CONTRIBUTORS & TESTIMONIALS ==================== */
+
+.contributors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 90%;
+}
+
+.contributors iframe {
+    max-width: 100%;
+    border-radius: 20px;
+    flex: 1 1 400px;
+}
+
+.testimonials {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1 1 300px;
+    padding: 0;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    transform: none;
+    opacity: 1;
+}
+
+.user-info h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: beige;
+    text-align: left;
+}
+
+.user-info p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #ccc;
+    margin: 0;
+    text-align: left;
+}
+
+/* ======================= FORM STYLES ======================= */
+
+.comment-section {
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-section h3 {
+    color: beige;
+    margin-bottom: 1rem;
+}
+
+form {
+    width: min(400px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label {
+    flex-shrink: 0;
+    min-height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--bg-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+form textarea {
+    flex-grow: 1;
+    min-width: 0;
+    min-height: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    color: beige;
+    transition: 150ms ease-in-out;
+    resize: vertical;
+}
+
+form input {
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    color: beige;
+    transition: 150ms ease-in-out;
+}
+
+form input:hover, form textarea:hover {
+    border-color: var(--accent-color);
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+div:has(input:focus) > label, div:has(textarea:focus) > label {
+    background-color: var(--accent-color);
+    fill: beige;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #ccc;
+}
+
+form div.incorrect label {
+    background-color: #f06272;
+}
+
+form div.incorrect input, form div.incorrect textarea {
+    border-color: #f06272;
+}
+
+#error-message {
+    color: #f06272;
+    margin: 5px 0;
+}
+
+/* ======================= MEDIA QUERIES ======================= */
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    .gallery video {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    .hero-content p {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .title {
+        margin: 2rem auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .top-section {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .hero-content h3,
+    .hero-content p {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        width: 100%;
+    }
+
+    .gallery img, .gallery video {
+        height: 250px;
+    }
+
+    .gallery video {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .contributors {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .contributors iframe {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .testimonials {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    #image {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .side-text {
+        writing-mode: vertical-rl;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-right: 0.5rem;
+    }
+
+    #image img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    .comment-section {
+        width: 100%;
+    }
+}

@@ -1,0 +1,152 @@
+/* ======================= GLOBALS & RESET ======================= */
+
+:root {
+    --accent-color: #8672ff;
+    --bg-color: #000;
+    --text-color: #2e2841;
+}
+
+html {
+    font-family: "times new roman", Segoe UI, sans-serif;
+    box-sizing: border-box;
+    font-size: clamp(10pt, 2vw, 14pt);
+    color: var(--text-color);
+    text-align: center;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+/* ==================== TYPOGRAPHY & BASIC ELEMENTS ==================== */
+
+.wrapper {
+    background-color: var(--bg-color);
+    height:100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 1rem;
+    font-size: 0.9rem;
+}
+
+span {
+    color: var(--accent-color);
+    transition: 150ms ease-in-out;
+}
+
+/* ======================= BUTTONS & COMPONENTS ======================= */
+
+.neo-btn {
+    margin: 2rem;
+    position: relative;
+    padding: 0.9em 2.6em;
+    border-radius: 100px;
+    background: var(--bg-color);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    text-transform: uppercase;
+
+    --x: 50%;
+    --y: 50%;
+}
+
+.neo-btn span {
+    position: relative;
+    z-index: 2;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.neo-btn::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background:
+      conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0%,
+        var(--accent-color) 15%,
+        transparent 60%
+      );
+      filter:blur(4px);
+    animation: spin 3.4s linear infinite;
+    z-index: 0;
+}
+
+.neo-btn::after {
+    content: "";
+    transform: scale(1.1);
+    position: absolute;
+    inset: 3px;
+    border-radius: inherit;
+    background: var(--bg-color);
+    z-index: 1;
+    transition: background 0.2s ease;
+}
+
+.neo-btn:hover::after {
+    transition: all .6s ease;
+    background:
+      radial-gradient(
+        60px circle at var(--x) var(--y),
+        hsla(263, 100%, 68%, 0.35),
+        transparent 70%
+      ),
+      var(--bg-color);
+}
+
+.neo-btn:hover span {
+    color: var(--accent-color);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ======================= MEDIA QUERIES ======================= */
+
+@media (max-width: 1100px) {
+    .wrapper {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 90%;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}

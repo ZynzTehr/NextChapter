@@ -183,12 +183,6 @@ section.banner {
     width: 90%;
 }
 
-.contributors iframe {
-    max-width: 100%;
-    border-radius: 20px;
-    flex: 1 1 400px;
-}
-
 .testimonials {
     list-style: none;
     display: flex;
